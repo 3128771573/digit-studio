@@ -1,0 +1,25 @@
+{
+  "date": "2026-10-11",
+  "platform": "Windows-11-10.0.26200-SP0",
+  "python": "3.13.7",
+  "device": "CPU",
+  "threads": 4,
+  "packages": {
+    "torch": "2.14.0+cpu",
+    "torchvision": "0.29.0+cpu",
+    "numpy": "2.2.6",
+    "pandas": "3.0.6",
+    "fastapi": "0.141.1",
+    "uvicorn": "0.54.0",
+    "matplotlib": "3.10.7",
+    "pillow": "12.0.0",
+    "torchinfo": "1.8.0",
+    "httpx": "0.28.1"
+  },
+  "baseline_tests": {
+    "command": "cd mnist_web; python -m unittest discover -s tests -v",
+    "passed": 9,
+    "warning": "Starlette TestClient httpx deprecation",
+    "scope": "API, controlled lifecycle and 32-sample training"
+  }
+}

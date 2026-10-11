@@ -30,6 +30,8 @@ macOS/Linux 使用 `.venv/bin/python` 运行相同 Python 入口。
 - 模型探索：卷积特征图、模型摘要、1,000 张均衡测试样本的混淆矩阵。
 - [安装、使用与项目文件说明](mnist_web/README.md)
 - [47 页详细 PDF 说明书](output/pdf/Digit_Studio_Project_Manual.pdf)
+- [完整神经网络教材与独立 CPU 实验](textbook/README.md)
+- [《从一个 3 开始》教材 PDF](output/pdf/Digit_Studio_Textbook.pdf)
 - [说明书文字源稿](output/pdf/manual_content.md)
 - [开发交接记录](PROJECT_HANDOFF.md)
 

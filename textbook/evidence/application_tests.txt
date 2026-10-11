@@ -1,0 +1,21 @@
+Run date: 2026-10-11
+Baseline: 43b82e9eedae27ed9771f40df130e0e51ceed462
+Command (from mnist_web): python -m unittest discover -s tests -v
+Environment: Python 3.13.7, torch 2.14.0+cpu, Windows, CPU
+
+test_blank_and_bad_uploads ... ok
+test_browser_opens_only_after_server_ready ... ok
+test_cancelling_before_first_epoch_keeps_weights ... ok
+test_features_and_balanced_confusion ... ok
+test_predictions_use_real_model ... ok
+test_real_training_on_small_subset ... ok
+test_shutdown_waits_for_training_and_blocks_new_jobs ... ok
+test_status_and_static_page ... ok
+test_training_lock_and_stop ... ok
+
+Ran 9 tests in 0.903s
+OK
+
+Observed warning: Starlette TestClient httpx compatibility is deprecated.
+This file records the observed command result with machine-specific paths removed.
+This is a fresh run, separate from the nine tests described in the original PDF.

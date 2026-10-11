@@ -1,0 +1,64 @@
+{
+  "baseline": "43b82e9eedae27ed9771f40df130e0e51ceed462",
+  "method": "controlled small-data calls with patched preparation/report",
+  "original_weight_sha256_unchanged": "bfe1568e95a6ce5824f009ac1ea43055934e3dd246d09835edfa78340ce5899d",
+  "cases": [
+    {
+      "case": "before_epoch",
+      "checkpoint_replaced": false,
+      "history_epochs": 0,
+      "metrics": {},
+      "final_done": true,
+      "final_stopped": true
+    },
+    {
+      "case": "zero_batch",
+      "checkpoint_replaced": true,
+      "history_epochs": 1,
+      "metrics": {
+        "loss": 0.0,
+        "acc": 0.0,
+        "lr": 0.001,
+        "stopped": true,
+        "batches_done": 1,
+        "time": 0.0005342960357666016,
+        "n": 0
+      },
+      "final_done": true,
+      "final_stopped": true
+    },
+    {
+      "case": "partial_epoch",
+      "checkpoint_replaced": true,
+      "history_epochs": 1,
+      "metrics": {
+        "loss": 2.6437747478485107,
+        "acc": 0.0,
+        "lr": 0.001,
+        "stopped": true,
+        "batches_done": 2,
+        "time": 0.017673492431640625,
+        "n": 2
+      },
+      "final_done": true,
+      "final_stopped": true
+    },
+    {
+      "case": "report",
+      "checkpoint_replaced": true,
+      "history_epochs": 1,
+      "metrics": {
+        "loss": 2.615329623222351,
+        "acc": 0.0,
+        "lr": 0.001,
+        "stopped": false,
+        "batches_done": 2,
+        "time": 0.008329629898071289,
+        "n": 4,
+        "report_called": true
+      },
+      "final_done": true,
+      "final_stopped": false
+    }
+  ]
+}

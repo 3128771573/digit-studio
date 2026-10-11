@@ -1,0 +1,6 @@
+reportlab>=4.0
+matplotlib>=3.8
+numpy>=1.26
+pillow>=10
+pypdf>=5
+pdfplumber>=0.11

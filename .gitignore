@@ -1,5 +1,6 @@
 # Local environments, caches, and credentials
 .venv/
+.pdfvenv/
 venv/
 __pycache__/
 *.py[cod]
@@ -18,5 +19,8 @@ Thumbs.db
 mnist_web/data/
 mnist_web/tests/run-*/
 tmp/
+textbook/labs/data/
+textbook/labs/runs/
+textbook/build/
 
 # Keep the current model, baseline reports, and project manual in the repository.

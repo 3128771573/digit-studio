@@ -1,0 +1,126 @@
+{
+  "pdf": "Digit_Studio_Textbook.pdf",
+  "sha256": "95f962767448d64b886762a62b52d37b0fb1cf8106e9a615c39dc1ea2494a557",
+  "baseline": "43b82e9eedae27ed9771f40df130e0e51ceed462",
+  "source": "textbook/book.md",
+  "python": "3.13.7",
+  "body_font_size": 11,
+  "inner_margin_pt": 68,
+  "outer_margin_pt": 48,
+  "sources": [
+    [
+      "S1",
+      "mnist_web/model.py",
+      "MnistCNN.__init__/forward；count_parameters",
+      40,
+      83
+    ],
+    [
+      "S2",
+      "mnist_web/utils.py",
+      "_center_by_mass；preprocess_digit；preprocess_uploaded_image",
+      448,
+      610
+    ],
+    [
+      "S3",
+      "mnist_web/utils.py",
+      "get_transforms；get_dataloaders",
+      136,
+      220
+    ],
+    [
+      "S4",
+      "mnist_web/train.py",
+      "build_optimizer；build_scheduler",
+      53,
+      88
+    ],
+    [
+      "S5",
+      "mnist_web/train.py",
+      "train_one_epoch；evaluate；predict_batch",
+      91,
+      217
+    ],
+    [
+      "S6",
+      "mnist_web/train.py",
+      "fit：每轮/最后保存、报告与停止",
+      247,
+      437
+    ],
+    [
+      "S7",
+      "mnist_web/model.py",
+      "save_model；load_model",
+      119,
+      185
+    ],
+    [
+      "S8",
+      "mnist_web/app.py",
+      "decode_image；infer；sample；analyze",
+      88,
+      196
+    ],
+    [
+      "S9",
+      "mnist_web/app.py",
+      "training_worker；launch_training；stop_training",
+      199,
+      254
+    ],
+    [
+      "S10",
+      "mnist_web/app.py",
+      "finish_shutdown；shutdown_service；main",
+      270,
+      325
+    ],
+    [
+      "S11",
+      "mnist_web/static/app.js",
+      "画布、请求、轮询与关闭界面",
+      1,
+      null
+    ],
+    [
+      "S12",
+      "mnist_web/static/index.html",
+      "三工作区页面与静态资源入口",
+      1,
+      null
+    ],
+    [
+      "S13",
+      "mnist_web/static/style.css",
+      "视觉样式、布局与响应式规则",
+      1,
+      null
+    ],
+    [
+      "S14",
+      "mnist_web/tests/test_api.py",
+      "ApiTests：9 项回归路径",
+      1,
+      null
+    ],
+    [
+      "S15",
+      "mnist_web/start.bat",
+      "虚拟环境选择与 --open-browser",
+      1,
+      null
+    ],
+    [
+      "S16",
+      "mnist_web/requirements.txt",
+      "依赖声明范围",
+      1,
+      null
+    ]
+  ],
+  "formula_count": 25,
+  "diagram_count": 16
+}

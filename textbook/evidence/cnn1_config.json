@@ -1,0 +1,48 @@
+{
+  "model": "cnn1",
+  "run": "verified_cnn1",
+  "epochs": 2,
+  "batch": 64,
+  "lr": 0.001,
+  "seed": 42,
+  "full": false,
+  "device": "cpu",
+  "threads": 4,
+  "optimizer": "Adam",
+  "weight_decay": 0.0,
+  "augmentation": false,
+  "normalization": {
+    "mean": 0.1307,
+    "std": 0.3081
+  },
+  "input": [
+    1,
+    28,
+    28
+  ],
+  "classes": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9
+  ],
+  "preprocessing": "white-paper-bbox20-v1",
+  "parameters": 15770,
+  "sizes": [
+    2048,
+    512
+  ],
+  "seconds": 0.6654590999969514,
+  "python": "3.13.7",
+  "torch": "2.14.0+cpu",
+  "torchvision": "0.29.0+cpu",
+  "numpy": "2.2.6",
+  "pillow": "12.0.0",
+  "split_sha256": "3c9a575886abb29919a68faf35f6fb2c618a876b0619e025457e0bff87f5dba3"
+}

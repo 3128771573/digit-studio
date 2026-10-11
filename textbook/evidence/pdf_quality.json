@@ -1,0 +1,33 @@
+{
+  "pdf": "Digit_Studio_Textbook.pdf",
+  "sha256": "95f962767448d64b886762a62b52d37b0fb1cf8106e9a615c39dc1ea2494a557",
+  "pages": 50,
+  "bookmarks": 24,
+  "annotations": 122,
+  "a4_all": true,
+  "bounds_issues": [],
+  "forbidden_text": [],
+  "sparse_pages_to_review": [],
+  "embedded_descriptor_fonts": {
+    "/AAAAAA+STIXSizeOneSym-Regular": true,
+    "/AAAAAA+SimHei": true,
+    "/AAAAAB+SimHei": true,
+    "/AAAAAC+SimHei": true,
+    "/AAAAAD+SimHei": true,
+    "/AAAAAE+SimHei": true,
+    "/AAAAAA+DejaVuSansMono": true,
+    "/AAAAAA+DejaVuSans-Oblique": true,
+    "/AAAAAA+DejaVuSans": true,
+    "/AAAAAA+DejaVuSansDisplay": true,
+    "/AAAAAA+STIXSizeThreeSym-Regular": true,
+    "/AAAAAA+DejaVuSans-Bold": true,
+    "/AAAAAA+STIXSizeTwoSym-Regular": true
+  },
+  "math_text_checks": {
+    "3.523188": true,
+    "0.713983692881": true,
+    "421,834": true,
+    "0.665241": true
+  },
+  "visual_review": "Separate Poppler page rendering required; see visual_review.md."
+}
