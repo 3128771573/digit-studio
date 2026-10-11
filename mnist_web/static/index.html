@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="zh-CN">
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Digit Studio · 手写数字实验室</title><link rel="stylesheet" href="/assets/style.css"><script src="/assets/app.js" defer></script></head>
+<body>
+<svg class="symbols" xmlns="http://www.w3.org/2000/svg"><defs>
+<symbol id="i-grid" viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="2"/><rect x="14" y="3" width="7" height="7" rx="2"/><rect x="3" y="14" width="7" height="7" rx="2"/><rect x="14" y="14" width="7" height="7" rx="2"/></symbol>
+<symbol id="i-pen" viewBox="0 0 24 24"><path d="m16 3 5 5-12 12-6 1 1-6Z M13 6l5 5"/></symbol>
+<symbol id="i-chart" viewBox="0 0 24 24"><path d="M4 3v17h17 M7 14l4-5 4 3 5-7"/></symbol>
+<symbol id="i-layers" viewBox="0 0 24 24"><path d="m12 3 10 5-10 5L2 8Z M2 12l10 5 10-5 M2 16l10 5 10-5"/></symbol>
+<symbol id="i-arrow" viewBox="0 0 24 24"><path d="M4 12h16 m-6-6 6 6-6 6"/></symbol>
+<symbol id="i-undo" viewBox="0 0 24 24"><path d="M8 4 3 9l5 5 M3 9h11a6 6 0 0 1 0 12"/></symbol>
+<symbol id="i-trash" viewBox="0 0 24 24"><path d="M3 6h18 M9 6V3h6v3 M5 6l1 15h12l1-15 M10 10v7 M14 10v7"/></symbol>
+<symbol id="i-upload" viewBox="0 0 24 24"><path d="M12 16V3 M7 8l5-5 5 5 M4 15v6h16v-6"/></symbol>
+<symbol id="i-shuffle" viewBox="0 0 24 24"><path d="M3 6h3l12 12h3 M3 18h3L18 6h3 m-3-3 3 3-3 3 m0 6 3 3-3 3"/></symbol>
+<symbol id="i-bolt" viewBox="0 0 24 24"><path d="m13 2-9 12h7l-1 8 10-13h-7Z"/></symbol>
+<symbol id="i-check" viewBox="0 0 24 24"><path d="m5 12 4 4 10-10"/></symbol>
+<symbol id="i-power" viewBox="0 0 24 24"><path d="M12 3v9 M6 5a9 9 0 1 0 12 0"/></symbol>
+</defs></svg>
+<aside class="sidebar">
+<a class="brand" href="/"><span class="brand-mark"><svg><use href="#i-grid"/></svg></span><span>Digit<span class="brand-light"> Studio</span><small>HANDWRITING LAB</small></span></a>
+<div class="nav-caption">工作空间</div>
+<nav aria-label="功能导航">
+<button class="nav-item active" data-page="recognize"><svg><use href="#i-pen"/></svg>手写识别<span class="nav-dot"></span></button>
+<button class="nav-item" data-page="training"><svg><use href="#i-chart"/></svg>模型训练</button>
+<button class="nav-item" data-page="analysis"><svg><use href="#i-layers"/></svg>模型探索</button>
+</nav>
+<div class="sidebar-note"><div class="note-icon"><svg><use href="#i-bolt"/></svg></div><b>一笔，连接神经网络。</b><p>从手写到预测，亲眼看看模型如何理解你的数字。</p><span>MNIST · PyTorch</span></div>
+<div class="sidebar-bottom"><span class="status-dot"></span>本地运行<span class="local-label">LOCAL</span></div>
+</aside>
+<div class="app-main">
+<header class="topbar"><div class="breadcrumbs">工作空间<span>/</span><b id="breadcrumb">手写识别</b></div><div class="top-actions"><div class="top-status" id="connection"><span class="status-dot"></span><span>正在连接模型</span></div><button type="button" class="shutdown-button" id="shutdown-service"><svg aria-hidden="true"><use href="#i-power"/></svg>关闭服务</button></div></header>
+<main>
+<section class="page active" id="page-recognize">
+<div class="page-heading"><div><div class="eyebrow">RECOGNITION</div><h1>把你的笔迹，变成答案<span class="accent">。</span></h1><p>在画布上写下一个数字，看看神经网络的判断。</p></div><span class="pill"><svg><use href="#i-bolt"/></svg>落笔即识别</span></div>
+<div class="stats-row"><div class="stat"><span class="stat-icon violet"><svg><use href="#i-layers"/></svg></span><div><span>当前模型</span><b>MNIST CNN<small>2 个卷积层</small></b></div></div><div class="stat"><span class="stat-icon mint"><svg><use href="#i-check"/></svg></span><div><span>已保存模型 · 验证准确率</span><b id="model-accuracy">—<small>历史训练记录</small></b></div></div><div class="stat"><span class="stat-icon amber"><svg><use href="#i-bolt"/></svg></span><div><span>本次识别耗时</span><b><span id="inference-time">—</span><small id="device-label">等待输入</small></b></div></div></div>
+<div class="recognition-grid">
+<section class="panel canvas-panel"><div class="panel-heading"><div><h2>手写画布</h2><p>写一个 0–9 的数字，尽量占满中间区域</p></div><span class="tiny-tag">INPUT</span></div>
+<div class="canvas-wrap"><canvas id="drawing" width="320" height="320" aria-label="手写数字画布"></canvas><div class="canvas-guide" id="canvas-guide"><span class="guide-number">7</span><span>从这里开始书写</span><small>支持鼠标 / 触控 / 手写笔</small></div><span class="canvas-corner">320 × 320</span></div>
+<div class="drawing-tools"><label for="brush">笔迹粗细</label><input id="brush" type="range" min="6" max="32" value="18"><span id="brush-value">18</span><button class="icon-button" id="undo" aria-label="撤销上一笔" title="撤销上一笔" disabled><svg><use href="#i-undo"/></svg></button><button class="icon-button" id="clear" aria-label="清空画布" title="清空画布"><svg><use href="#i-trash"/></svg></button></div>
+<div class="canvas-actions"><button class="button secondary" id="sample"><svg><use href="#i-shuffle"/></svg>试个样本</button><button class="button primary" id="predict"><svg><use href="#i-bolt"/></svg>识别数字</button></div>
+<div class="quick-samples"><span>或者试试</span><div id="digit-shortcuts"></div></div>
+</section>
+<section class="panel result-panel"><div class="panel-heading"><div><h2>识别结果</h2><p id="result-caption">模型对每个候选数字的判断</p></div><span class="tiny-tag purple">OUTPUT</span></div>
+<div class="answer-area"><div class="answer-digit" id="answer">?</div><div class="answer-info"><span id="answer-state">等待输入</span><b id="confidence">写下你的第一个数字</b><p id="answer-tip">模型的判断会出现在这里</p></div></div>
+<div class="probability-heading"><span>候选数字概率</span><span>0–9</span></div><div id="probabilities" class="probabilities"></div>
+<div class="result-foot"><span class="status-dot"></span><span id="prediction-status" role="status">准备就绪，等待笔迹</span><button id="to-analysis">深入分析<svg><use href="#i-arrow"/></svg></button></div>
+</section>
+</div>
+<section class="pipeline"><div class="pipeline-intro"><span class="eyebrow">BEHIND THE SCENES</span><h3>模型真正看到了什么？</h3><p>你的笔迹会被裁剪、居中，转换成模型熟悉的图像。</p></div><div class="pipeline-step"><span class="step-number">01</span><div><b>原始笔迹</b><small>保留你的书写方式</small></div></div><svg class="pipeline-arrow"><use href="#i-arrow"/></svg><div class="pipeline-step"><div class="input-preview" id="input-preview"><span>28</span></div><div><b>28 × 28 输入</b><small>自动裁剪 · 质心居中</small></div></div><svg class="pipeline-arrow"><use href="#i-arrow"/></svg><div class="pipeline-step"><span class="network-symbol"><svg><use href="#i-layers"/></svg></span><div><b>卷积神经网络</b><small>提取笔画，判断数字</small></div></div></section>
+</section>
+<section class="page" id="page-training" hidden>
+<div class="page-heading"><div><div class="eyebrow">TRAINING</div><h1>让模型，从样本中学习<span class="accent">。</span></h1><p>调整参数，观察每一轮训练带来的变化。</p></div><span class="pill">60,000 张训练样本（含验证集）</span></div>
+<div class="training-grid"><section class="panel training-controls"><div class="panel-heading"><div><h2>训练配置</h2><p>默认参数适合第一次实验</p></div></div>
+<form id="training-form"><label>训练轮数<span id="epochs-value">5 轮</span><input id="epochs" name="epochs" type="range" min="1" max="30" value="5"></label><label>每批样本数<select name="batch_size"><option>32</option><option selected>64</option><option>128</option><option>256</option></select></label><label>学习率<select name="lr"><option>0.01</option><option>0.005</option><option selected>0.001</option><option>0.0005</option><option>0.0001</option></select></label><details><summary>高级参数</summary><label>优化器<select name="optimizer"><option value="adam">Adam</option><option value="sgd">SGD</option><option value="rmsprop">RMSprop</option></select></label><label>学习率策略<select name="scheduler"><option value="cosine">余弦退火</option><option value="step">阶梯衰减</option><option value="none">固定学习率</option></select></label></details><div class="training-notice">新训练会创建模型并更新已保存的权重。停止后保留本次学到的内容。</div><button type="submit" class="button primary" id="start-training">开始训练<svg><use href="#i-arrow"/></svg></button><button type="button" class="button secondary" id="stop-training" disabled>停止并保存</button></form>
+</section><section class="panel training-monitor"><div class="panel-heading"><div><h2>学习进度</h2><p id="training-status" role="status">准备就绪 · 尚未开始训练</p></div><span class="tiny-tag" id="epoch-progress">0 / 5</span></div><div class="training-metrics"><div><span>训练损失</span><b id="train-loss">—</b></div><div><span>验证准确率</span><b id="val-accuracy">—</b></div><div><span>已完成轮数</span><b id="epoch-count">0</b></div></div><div class="chart-heading"><h3>Loss · 越低越好</h3><div class="chart-legend"><span>训练集</span><span>验证集</span></div></div><div class="chart" id="loss-chart"></div><div class="chart-heading"><h3>Accuracy · 越高越好</h3><div class="chart-legend"><span>训练集</span><span>验证集</span></div></div><div class="chart" id="accuracy-chart"></div><details class="logs"><summary>训练日志 <a id="csv-download" href="/api/train/csv" hidden>下载 CSV ↓</a></summary><pre id="training-log">训练开始后，日志将显示在这里。</pre></details></section></div>
+</section>
+<section class="page" id="page-analysis" hidden>
+<div class="page-heading"><div><div class="eyebrow">EXPLORATION</div><h1>打开神经网络的黑盒<span class="accent">。</span></h1><p>看看模型如何从笔迹中提取特征，找到答案。</p></div></div>
+<div class="analysis-grid"><section class="panel analysis-controls"><div class="panel-heading"><div><h2>选择一张数字图片</h2><p>使用当前笔迹，或上传图片</p></div></div><div class="analysis-image" id="analysis-source"><span>还没有图片</span></div><div class="canvas-actions"><button class="button secondary" id="use-drawing">使用当前笔迹</button><button class="button secondary" id="analysis-sample">随机样本</button></div><label class="button upload-button"><svg><use href="#i-upload"/></svg>上传图片<input type="file" id="upload" accept="image/*" hidden></label><label class="field-label">特征图数量<select id="channels"><option>8</option><option>16</option><option>32</option></select></label><label class="checkbox-label"><input type="checkbox" id="confusion">评估混淆矩阵<small>每类 100 张，共 1,000 张测试样本</small></label><button class="button primary" id="analyze">开始分析<svg><use href="#i-arrow"/></svg></button><p id="analysis-status" class="muted" role="status">选择图片后，即可查看卷积特征。</p></section><section class="panel analysis-results"><div class="panel-heading"><div><h2>卷积层看到的特征</h2><p>每个通道提取不同的边缘与笔画信息</p></div><span class="tiny-tag purple">CONV 01</span></div><div id="analysis-answer" class="analysis-answer" hidden></div><div id="feature-maps" class="feature-maps"><div class="empty-analysis"><svg><use href="#i-layers"/></svg><h3>观察数字的另一面</h3><p>分析图片后，特征图将在这里出现。</p></div></div><section id="confusion-result" hidden><h3>混淆矩阵</h3><p class="muted" id="confusion-caption"></p><div class="matrix" id="confusion-matrix"></div></section><details><summary>查看完整网络结构</summary><pre id="network-summary">分析后显示模型结构。</pre></details></section></div>
+</section>
+<footer>Digit Studio<span>PyTorch CNN · MNIST</span><span>所有识别在本机完成</span></footer>
+</main></div><div id="toast" role="alert" hidden></div>
+<dialog id="shutdown-dialog" aria-labelledby="shutdown-title" aria-describedby="shutdown-message"><div class="shutdown-mark"><svg aria-hidden="true"><use href="#i-power"/></svg></div><h2 id="shutdown-title">关闭本机服务？</h2><p id="shutdown-message">关闭后，网页将无法继续识别。再次双击 start.bat 即可启动。</p><div class="shutdown-actions"><button type="button" class="button secondary" id="shutdown-cancel">取消</button><button type="button" class="button danger" id="shutdown-confirm">关闭服务</button></div></dialog>
+</body></html>

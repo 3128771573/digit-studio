@@ -1,0 +1,6 @@
+# Preserve the exact baseline bytes, including the manual's source fingerprints.
+* -text
+*.pth binary
+*.pdf binary
+*.png binary
+*.jpg binary

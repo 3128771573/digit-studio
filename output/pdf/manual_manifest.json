@@ -1,0 +1,207 @@
+{
+  "pdf": "Digit_Studio_Project_Manual.pdf",
+  "source_date": "2026-10-11",
+  "chapters": {
+    "阅读导航": 2,
+    "01 项目全貌与阅读方法": 3,
+    "02 目录结构、环境与安装": 4,
+    "03 使用说明与完整操作流程": 6,
+    "04 系统架构、接口与一次识别的数据流": 8,
+    "05 图像预处理：从笔迹到张量": 11,
+    "06 CNN 结构与逐层数学原理": 15,
+    "07 学习原理：数据、损失和参数更新": 18,
+    "08 训练代码、保存策略与曲线解读": 21,
+    "09 多线程、共享状态与生命周期": 24,
+    "10 前端画布、请求队列与结果呈现": 27,
+    "11 模型推理、权重文件与设备管理": 30,
+    "12 特征图、混淆矩阵与可解释性": 32,
+    "13 离线报告、CSV 与实验记录": 34,
+    "14 测试方法、证据和覆盖边界": 36,
+    "15 迁移、命令行实验与故障排查": 38,
+    "16 二次开发：从需求到可验证改动": 40,
+    "17 教学实验、术语与常见误区": 41,
+    "18 代码索引、版本基线与参考资料": 43
+  },
+  "excerpts": [
+    {
+      "file": "mnist_web/app.py",
+      "start": 27,
+      "end": 39,
+      "anchor": "ROOT = Path"
+    },
+    {
+      "file": "mnist_web/app.py",
+      "start": 74,
+      "end": 90,
+      "anchor": "class ImageRequest"
+    },
+    {
+      "file": "mnist_web/app.py",
+      "start": 92,
+      "end": 110,
+      "anchor": "def decode_image"
+    },
+    {
+      "file": "mnist_web/app.py",
+      "start": 118,
+      "end": 132,
+      "anchor": "def infer"
+    },
+    {
+      "file": "mnist_web/utils.py",
+      "start": 600,
+      "end": 614,
+      "anchor": "gray_full = np.asarray"
+    },
+    {
+      "file": "mnist_web/utils.py",
+      "start": 455,
+      "end": 475,
+      "anchor": "ys, xs = np.nonzero(binary)"
+    },
+    {
+      "file": "mnist_web/utils.py",
+      "start": 570,
+      "end": 579,
+      "anchor": "if apply_normalize:"
+    },
+    {
+      "file": "mnist_web/model.py",
+      "start": 57,
+      "end": 69,
+      "anchor": "self.conv1 ="
+    },
+    {
+      "file": "mnist_web/model.py",
+      "start": 72,
+      "end": 85,
+      "anchor": "x = self.pool(F.relu"
+    },
+    {
+      "file": "mnist_web/utils.py",
+      "start": 204,
+      "end": 220,
+      "anchor": "g = torch.Generator"
+    },
+    {
+      "file": "mnist_web/train.py",
+      "start": 130,
+      "end": 138,
+      "anchor": "optimizer.zero_grad(set_to_none=True)"
+    },
+    {
+      "file": "mnist_web/train.py",
+      "start": 79,
+      "end": 87,
+      "anchor": "name = (scheduler_name"
+    },
+    {
+      "file": "mnist_web/train.py",
+      "start": 287,
+      "end": 295,
+      "anchor": "def emit(status"
+    },
+    {
+      "file": "mnist_web/train.py",
+      "start": 371,
+      "end": 395,
+      "anchor": "val_metrics = evaluate"
+    },
+    {
+      "file": "mnist_web/app.py",
+      "start": 201,
+      "end": 212,
+      "anchor": "for update in fit"
+    },
+    {
+      "file": "mnist_web/app.py",
+      "start": 42,
+      "end": 46,
+      "anchor": "def reload_model"
+    },
+    {
+      "file": "mnist_web/start.bat",
+      "start": 10,
+      "end": 23,
+      "anchor": "cd /d"
+    },
+    {
+      "file": "mnist_web/app.py",
+      "start": 294,
+      "end": 303,
+      "anchor": "def open_browser_when_ready"
+    },
+    {
+      "file": "mnist_web/app.py",
+      "start": 270,
+      "end": 275,
+      "anchor": "def finish_shutdown"
+    },
+    {
+      "file": "mnist_web/app.py",
+      "start": 277,
+      "end": 294,
+      "anchor": "def shutdown_service"
+    },
+    {
+      "file": "mnist_web/static/app.js",
+      "start": 83,
+      "end": 93,
+      "anchor": "function point(event)"
+    },
+    {
+      "file": "mnist_web/static/app.js",
+      "start": 65,
+      "end": 89,
+      "anchor": "function schedulePrediction"
+    },
+    {
+      "file": "mnist_web/train.py",
+      "start": 205,
+      "end": 213,
+      "anchor": "def predict_batch"
+    },
+    {
+      "file": "mnist_web/model.py",
+      "start": 129,
+      "end": 134,
+      "anchor": "payload ="
+    },
+    {
+      "file": "mnist_web/app.py",
+      "start": 174,
+      "end": 182,
+      "anchor": "features = torch.relu"
+    },
+    {
+      "file": "mnist_web/app.py",
+      "start": 185,
+      "end": 200,
+      "anchor": "indices = []"
+    },
+    {
+      "file": "mnist_web/utils.py",
+      "start": 698,
+      "end": 709,
+      "anchor": "df = pd.DataFrame"
+    },
+    {
+      "file": "mnist_web/tests/test_api.py",
+      "start": 49,
+      "end": 72,
+      "anchor": "def test_shutdown_waits"
+    }
+  ],
+  "source_hashes": {
+    "mnist_web/app.py": "616b87793a340c5855a5946d2bb33d2d794247646568f75a5c5544929ace5467",
+    "mnist_web/model.py": "dfdabf1156a15d485c8e16c204659fab9e0dd0372cad9b0625702ad234b985a2",
+    "mnist_web/train.py": "dcaa0900a2838cd1d49067dc5948f4c470cfea9b5029c86a8859dbbedb01d602",
+    "mnist_web/utils.py": "1c9bbb521635fc9b126076bc792035b5d504494689352ada862d7d23b9802019",
+    "mnist_web/static/index.html": "be84f1d6eb7ccc0eb2455a08bb54beb9328ce64a60b4ce75b79442b36f1fdcb2",
+    "mnist_web/static/style.css": "f16667a475cd8a54cb6e422546e5c1a2c0622de6b654ec20c089cf9c7073d767",
+    "mnist_web/static/app.js": "f5c66ec312de11b5d965647a70e67a0e543e885cccf6b6e90aea04677f245171",
+    "mnist_web/start.bat": "39eeb7c000ab5a77ecd3b4f224564971b9569fcc4f9c2ea30f2b2a9423713f3a",
+    "mnist_web/requirements.txt": "0b02aa09d2b6745cf11c7720570be6018f8e6629d96be5cd72c4766836c7d1ad",
+    "mnist_web/tests/test_api.py": "8444ea7606954026f0da8a11ac22662751958eb974a704fe1caee1de992f47e9"
+  }
+}

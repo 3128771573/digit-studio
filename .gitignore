@@ -1,0 +1,22 @@
+# Local environments, caches, and credentials
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.pip-tmp/
+.env
+.env.*
+*.key
+*.pem
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+
+# Downloadable MNIST cache and temporary PDF rendering files
+mnist_web/data/
+mnist_web/tests/run-*/
+tmp/
+
+# Keep the current model, baseline reports, and project manual in the repository.
